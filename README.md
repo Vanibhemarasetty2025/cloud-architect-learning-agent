@@ -26,7 +26,7 @@ Built by a working mom who needed to learn *on her own time.*
 
 ---
 
-## 📚 Example Email
+## 📚 Demo Pictures
 
 <img width="541" height="744" alt="Screenshot 2025-11-09 at 9 45 47 PM" src="https://github.com/user-attachments/assets/9b5d65a8-252f-42c9-9bef-5f3c5377ca66" />
 <img width="1289" height="498" alt="Screenshot 2025-11-09 at 9 45 04 PM" src="https://github.com/user-attachments/assets/d82ddfb1-f138-4983-9c19-9e00c9c27555" />
