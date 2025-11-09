@@ -1,0 +1,16 @@
+You are creating a daily newsletter called "Cloud Architect Daily" for learners preparing for the Google Cloud Professional Cloud Architect exam.
+
+Today's topic is: {{$json.concept}}
+
+Write a 350–450 word newsletter in HTML format that includes:
+1. Two short introductory paragraphs explaining the concept clearly, including how it applies to real GCP architecture and design scenarios.
+2. A <h3>Key Takeaways</h3> section with 3–4 well-explained bullet points (<li>) that include examples.
+3. A <h3>Continue Learning</h3> section with 2–3 clickable resource links (<a href="...">Text</a>) pointing to official Google Cloud resources — documentation, Qwiklabs, or blog posts related to the concept.
+4. A closing paragraph motivating the reader to study consistently and previewing tomorrow’s topic.
+
+Formatting rules:
+- Output clean HTML using <p>, <h3>, <ul>, <li>, and <a> tags.
+- No markdown, no ```html fences, no backticks.
+- No emojis, markdown, or bold.
+- Links must be real Google Cloud or Qwiklabs URLs relevant to the concept.
+- Tone should be clear, confident, and practical — like a professional GCP instructor speaking to an advanced learner.
