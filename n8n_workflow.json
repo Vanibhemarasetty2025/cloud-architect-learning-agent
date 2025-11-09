@@ -1,0 +1,167 @@
+{
+  "name": "Cloud Architect Daily Reminders",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 11
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "67b90878-e1ae-4f5d-9044-83a381207eca",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Emit one item per concept, in order\n// 30-day Professional Cloud Architect syllabus (ordered progression)\n// Each item: day, concept, resources: [{text, url}]\nreturn [\n  { json: { day: 1, concept: \"Intro to Google Cloud, org/resource hierarchy, IAM overview\", resources: [\n    { text: \"PCA certification overview\", url: \"https://cloud.google.com/learn/certification/cloud-architect\" },\n    { text: \"Resource hierarchy basics\", url: \"https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy\" },\n    { text: \"IAM basics\", url: \"https://cloud.google.com/iam/docs/overview\" }\n  ]}},\n  { json: { day: 2, concept: \"Compute options: GCE vs GKE vs App Engine vs Cloud Run\", resources: [\n    { text: \"Compute Engine overview\", url: \"https://cloud.google.com/compute/docs\" },\n    { text: \"GKE overview\", url: \"https://cloud.google.com/kubernetes-engine/docs\" },\n    { text: \"Cloud Run overview\", url: \"https://cloud.google.com/run/docs\" }\n  ]}},\n  { json: { day: 3, concept: \"GKE architecture, node pools, autoscaling, networking models\", resources: [\n    { text: \"GKE architecture\", url: \"https://cloud.google.com/kubernetes-engine/docs/concepts/kubernetes-engine-overview\" },\n    { text: \"GKE autoscaling\", url: \"https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler\" }\n  ]}},\n  { json: { day: 4, concept: \"Serverless patterns: Cloud Run, App Engine, eventing with Pub/Sub\", resources: [\n    { text: \"Cloud Run patterns\", url: \"https://cloud.google.com/run/docs/best-practices\" },\n    { text: \"App Engine standard vs flexible\", url: \"https://cloud.google.com/appengine/docs/the-appengine-environments\" },\n    { text: \"Pub/Sub basics\", url: \"https://cloud.google.com/pubsub/docs/overview\" }\n  ]}},\n  { json: { day: 5, concept: \"Storage options: Cloud Storage, PD, Filestore, archival\", resources: [\n    { text: \"Cloud Storage classes\", url: \"https://cloud.google.com/storage/docs/storage-classes\" },\n    { text: \"Persistent Disk\", url: \"https://cloud.google.com/compute/docs/disks\" },\n    { text: \"Filestore\", url: \"https://cloud.google.com/filestore/docs/overview\" }\n  ]}},\n  { json: { day: 6, concept: \"Databases: Cloud SQL, Spanner, Firestore — selection tradeoffs\", resources: [\n    { text: \"Cloud SQL\", url: \"https://cloud.google.com/sql/docs/overview\" },\n    { text: \"Spanner\", url: \"https://cloud.google.com/spanner/docs/overview\" },\n    { text: \"Firestore\", url: \"https://cloud.google.com/firestore/docs/overview\" }\n  ]}},\n  { json: { day: 7, concept: \"Networking fundamentals: VPCs, subnets, routes, firewall rules\", resources: [\n    { text: \"VPC overview\", url: \"https://cloud.google.com/vpc/docs/overview\" },\n    { text: \"Routes and firewall\", url: \"https://cloud.google.com/vpc/docs/routes\" }\n  ]}},\n  { json: { day: 8, concept: \"Load balancing options (HTTP(S), TCP/UDP, internal/external), SSL\", resources: [\n    { text: \"Cloud Load Balancing\", url: \"https://cloud.google.com/load-balancing/docs/load-balancing-overview\" }\n  ]}},\n  { json: { day: 9, concept: \"Hybrid connectivity: Cloud VPN, Cloud Interconnect, HA design\", resources: [\n    { text: \"Cloud VPN\", url: \"https://cloud.google.com/vpn/docs/overview\" },\n    { text: \"Cloud Interconnect\", url: \"https://cloud.google.com/interconnect/docs/overview\" }\n  ]}},\n  { json: { day: 10, concept: \"VPC peering, Private Service Connect, DNS patterns\", resources: [\n    { text: \"VPC Network Peering\", url: \"https://cloud.google.com/vpc/docs/vpc-peering\" },\n    { text: \"Private Service Connect\", url: \"https://cloud.google.com/vpc/docs/private-service-connect\" },\n    { text: \"Cloud DNS\", url: \"https://cloud.google.com/dns/docs\" }\n  ]}},\n  { json: { day: 11, concept: \"IAM deep dive: policies, service accounts, impersonation, WIF\", resources: [\n    { text: \"Service accounts\", url: \"https://cloud.google.com/iam/docs/service-account-overview\" },\n    { text: \"Workload Identity Federation\", url: \"https://cloud.google.com/iam/docs/workload-identity-federation\" }\n  ]}},\n  { json: { day: 12, concept: \"Organization policies, folders, constraints, policy hierarchy\", resources: [\n    { text: \"Org Policy overview\", url: \"https://cloud.google.com/resource-manager/docs/organization-policy/overview\" }\n  ]}},\n  { json: { day: 13, concept: \"Security services: Cloud KMS, CMEK/CMK, Secret Manager\", resources: [\n    { text: \"Cloud KMS\", url: \"https://cloud.google.com/kms/docs\" },\n    { text: \"Secret Manager\", url: \"https://cloud.google.com/secret-manager/docs\" },\n    { text: \"CMEK on GCP\", url: \"https://cloud.google.com/compute/docs/disks/customer-managed-encryption\" }\n  ]}},\n  { json: { day: 14, concept: \"Perimeter security: VPC Service Controls, DLP overview\", resources: [\n    { text: \"VPC Service Controls\", url: \"https://cloud.google.com/vpc-service-controls/docs\" },\n    { text: \"Cloud DLP\", url: \"https://cloud.google.com/dlp/docs\" }\n  ]}},\n  { json: { day: 15, concept: \"Analytics design: BigQuery storage/compute separation, partitions, slots\", resources: [\n    { text: \"BigQuery architecture\", url: \"https://cloud.google.com/bigquery/docs/introduction\" },\n    { text: \"Partitions & clustering\", url: \"https://cloud.google.com/bigquery/docs/partitioned-tables\" }\n  ]}},\n  { json: { day: 16, concept: \"Data pipelines: Pub/Sub → Dataflow → BigQuery patterns\", resources: [\n    { text: \"Dataflow (Apache Beam)\", url: \"https://cloud.google.com/dataflow/docs\" },\n    { text: \"Streaming design\", url: \"https://cloud.google.com/architecture/streaming-analytics\" }\n  ]}},\n  { json: { day: 17, concept: \"Ops: Cloud Monitoring, Logging, alerting, SLOs\", resources: [\n    { text: \"Cloud Monitoring\", url: \"https://cloud.google.com/monitoring/docs\" },\n    { text: \"Cloud Logging\", url: \"https://cloud.google.com/logging/docs\" },\n    { text: \"SLOs on GCP\", url: \"https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring\" }\n  ]}},\n  { json: { day: 18, concept: \"Reliability & scaling: autoscaling patterns, regional vs zonal design\", resources: [\n    { text: \"Managed instance groups autoscaling\", url: \"https://cloud.google.com/compute/docs/autoscaler\" },\n    { text: \"Regional architecture guidance\", url: \"https://cloud.google.com/architecture/framework\" }\n  ]}},\n  { json: { day: 19, concept: \"Cost management: billing setup, budgets, CUDs/committed use, rightsizing\", resources: [\n    { text: \"Cost management\", url: \"https://cloud.google.com/billing/docs/how-to/cost-management\" },\n    { text: \"Budgets & alerts\", url: \"https://cloud.google.com/billing/docs/how-to/budgets\" }\n  ]}},\n  { json: { day: 20, concept: \"HA & DR: RTO/RPO, multi-region design, backup & restore patterns\", resources: [\n    { text: \"DR planning on GCP\", url: \"https://cloud.google.com/architecture/disaster-recovery-planning-guide\" }\n  ]}},\n  { json: { day: 21, concept: \"CI/CD: Cloud Build, Artifact Registry, Cloud Deploy\", resources: [\n    { text: \"Cloud Build\", url: \"https://cloud.google.com/build/docs/overview\" },\n    { text: \"Cloud Deploy\", url: \"https://cloud.google.com/deploy/docs/overview\" }\n  ]}},\n  { json: { day: 22, concept: \"Infrastructure as Code: Terraform on GCP, policy as code basics\", resources: [\n    { text: \"Terraform on GCP\", url: \"https://cloud.google.com/docs/terraform\" },\n    { text: \"Config Validator (policy as code)\", url: \"https://cloud.google.com/anthos-config-management/docs/concepts/policy-controller\" }\n  ]}},\n  { json: { day: 23, concept: \"Identity-aware access: IAP, BeyondCorp Enterprise patterns\", resources: [\n    { text: \"IAP overview\", url: \"https://cloud.google.com/iap/docs/concepts-overview\" },\n    { text: \"BeyondCorp Enterprise\", url: \"https://cloud.google.com/beyondcorp-enterprise\" }\n  ]}},\n  { json: { day: 24, concept: \"Caching & performance: Cloud CDN, Memorystore, latency strategies\", resources: [\n    { text: \"Cloud CDN\", url: \"https://cloud.google.com/cdn/docs/overview\" },\n    { text: \"Memorystore\", url: \"https://cloud.google.com/memorystore/docs/overview\" }\n  ]}},\n  { json: { day: 25, concept: \"API management with Apigee X: gateways, security, monetization basics\", resources: [\n    { text: \"Apigee X overview\", url: \"https://cloud.google.com/apigee/docs/api-platform/get-started/what-is-apigee\" }\n  ]}},\n  { json: { day: 26, concept: \"Case studies methodology (exam): how to analyze and choose designs\", resources: [\n    { text: \"Case study approach\", url: \"https://cloud.google.com/certification/guides/cloud-architect\" }\n  ]}},\n  { json: { day: 27, concept: \"Case study: Dress4Win — migration strategy, networking, data\", resources: [\n    { text: \"Dress4Win (guide)\", url: \"https://cloud.google.com/certification/guides/cloud-architect\" }\n  ]}},\n  { json: { day: 28, concept: \"Case study: Jooli — media delivery, scalability, security\", resources: [\n    { text: \"Jooli (guide)\", url: \"https://cloud.google.com/certification/guides/cloud-architect\" }\n  ]}},\n  { json: { day: 29, concept: \"Case study: TerramEarth — IoT ingestion, analytics, reliability\", resources: [\n    { text: \"TerramEarth (guide)\", url: \"https://cloud.google.com/certification/guides/cloud-architect\" }\n  ]}},\n  { json: { day: 30, concept: \"Mock design review and weak-area drills; exam strategy\", resources: [\n    { text: \"Exam guide & sample Qs\", url: \"https://cloud.google.com/learn/certification/cloud-architect\" },\n    { text: \"Architecture Framework\", url: \"https://cloud.google.com/architecture/framework\" }\n  ]}},\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "4c1cdf9f-5249-441c-9bfb-a2872838d7c5",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all concepts from the previous node\nconst concepts = $input.all();\n\n// Determine the current day in your learning plan (1–7)\n// You can later make this pull from a variable or Sheet\nconst startDate = new Date('2025-11-08'); // <-- replace with your real start date\nconst today = new Date();\nconst diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;\n\n// Find matching concept\nconst concept = concepts.find(item => item.json.day === diffDays);\n\n// If finished, loop back to day 1\nconst selected = concept ? concept.json : concepts[0].json;\n\nreturn [{ json: selected }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "2ee1d51b-e566-4611-b087-806d553e8520",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "responses": {
+          "values": [
+            {
+              "content": "=You are creating a daily newsletter called \"Cloud Architect Daily\" for learners preparing for the Google Cloud Professional Cloud Architect exam.\n\nToday's topic is: {{$json.concept}}\n\nWrite a 350–450 word newsletter in HTML format that includes:\n1. Two short introductory paragraphs explaining the concept clearly, including how it applies to real GCP architecture and design scenarios.\n2. A <h3>Key Takeaways</h3> section with 3–4 well-explained bullet points (<li>) that include examples.\n3. A <h3>Continue Learning</h3> section with 2–3 clickable resource links (<a href=\"...\">Text</a>) pointing to official Google Cloud resources — documentation, Qwiklabs, or blog posts related to the concept.\n4. A closing paragraph motivating the reader to study consistently and previewing tomorrow’s topic.\n\nFormatting rules:\n- Output clean HTML using <p>, <h3>, <ul>, <li>, and <a> tags.\n- No markdown, no ```html fences, no backticks.\n- No emojis, markdown, or bold.\n- Links must be real Google Cloud or Qwiklabs URLs relevant to the concept.\n- Tone should be clear, confident, and practical — like a professional GCP instructor speaking to an advanced learner.\n\n"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2,
+      "position": [
+        624,
+        0
+      ],
+      "id": "9c628016-8644-4a2d-aab2-af57f2bdabec",
+      "name": "Message a model",
+      "alwaysOutputData": true,
+      "credentials": {
+        "openAiApi": {
+          "id": "LniH1mAXbg3D5mzO",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "bhemarasetty.s@appsflyer.com",
+        "subject": "Cloud Architect Concepts",
+        "message": "=<!DOCTYPE html> <html>   <body style=\"font-family:Arial, Helvetica, sans-serif; color:#333; line-height:1.6; background:#fafafa; padding:20px;\">     <table width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" style=\"max-width:650px; margin:auto; background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.05);\">       <tr>         <td style=\"padding:30px;\">           <div style=\"text-align:center; margin-bottom:25px;\">             <h2 style=\"margin:0; color:#1a73e8;\">☁️ Cloud Architect Daily</h2>             <p style=\"margin:4px 0; font-size:14px; color:#777;\">Day  — {{ $('Code in JavaScript1').item.json.day }} {{ $('Code in JavaScript1').item.json.concept }}</p>           </div>            <p style=\"font-size:15px;\">Dear Vani,\n</p><p style=\"font-size:15px;\">{{ $json.output?.[0]?.content?.[0]?.text ?? $json.choices?.[0]?.message?.content ?? 'No summary generated.' }}</p>            <hr style=\"border:none; border-top:1px solid #eee; margin:25px 0;\">            <p style=\"font-size:14px; color:#555;\">             💡 <strong>Tip:</strong> Review today’s concept using the <em>Google Cloud documentation</em> or <em>Qwiklabs</em> exercises for hands-on learning.           </p>            <p style=\"font-size:14px; color:#777; margin-top:30px;\">             Keep architecting with purpose,<br>             <strong>The Cloud Architect Daily Team</strong>           </p>            <p style=\"text-align:center; font-size:12px; color:#aaa; margin-top:40px;\">             This email was sent automatically with n8n           </p>         </td>       </tr>     </table>   </body> </html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        976,
+        0
+      ],
+      "id": "5ca06d1e-c1bf-4ae9-8bc4-abea156dd11d",
+      "name": "Send a message",
+      "webhookId": "ca01341d-b4b1-4f33-ad9a-d86bfc5aff2a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "C39CV5sq53wqzfGz",
+          "name": "Gmail account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "326f52d6-2e1d-41ba-bec4-0bda404ba777",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5152d9ac095ac50ac164490ed5b6ca31f56c3526e6cebef2c21d86ffe00ae57a"
+  },
+  "id": "rLjqeK2U4C087wx8",
+  "tags": []
+}
